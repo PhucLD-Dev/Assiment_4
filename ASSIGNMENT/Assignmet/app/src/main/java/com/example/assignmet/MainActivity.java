@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 Wheather wheather = listWheather.get(0);
                 tvTem.setText(wheather.getTemperature().getValue().intValue()+"ºC");
                 tvStatus.setText(wheather.getIconPhrase());
+                tvNow.setText(convertTime(wheather.getDateTime()));
             }
 
             @Override
@@ -98,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     DayAdapter adapter = new DayAdapter(MainActivity.this, wheather1.getDailyForecasts());
                     rvDay.setAdapter(adapter);
 
-                    DailyForecasts dailyForecasts = wheather1.getDailyForecasts().get(1);
-                    tvNow.setText(convertTime(wheather1.getDailyForecasts().get(1).getDate()));
+//                     DailyForecasts dailyForecasts = wheather1.getDailyForecasts().get(0);
+//                     tvNow.setText(convertTime(wheather1.getDailyForecasts().get(0).getDate()));
                 }
             }
 
